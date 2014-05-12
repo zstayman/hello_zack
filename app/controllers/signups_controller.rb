@@ -2,8 +2,8 @@ class SignupsController < ApplicationController
   def new
     @signup = Signup.new
   end
-  def create
 
+  def create
     @user = Signup.new(signup_params)
     if @user.save
       binding.pry
