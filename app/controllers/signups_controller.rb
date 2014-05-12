@@ -3,8 +3,15 @@ class SignupsController < ApplicationController
     @signup = Signup.new
   end
   def create
+
     @user = Signup.new(signup_params)
-    # @user.save ?  :
+    if @user.save
+      binding.pry
+      SignupMailer.confirm_email(@user).deliver
+      render json: @user
+    else
+      render json: @user.errors, status: :unproccessable_entity
+    end
   end
 
   private
