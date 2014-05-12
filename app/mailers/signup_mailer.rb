@@ -3,7 +3,7 @@ class SignupMailer < ActionMailer::Base
 
   def confirm_email(user)
     @user = user
-    @website = 'http://www.stayman.co'
+    @website = 'www.stayman.co'
     mail(to: @user.email, subject: 'Thank you for coming to the General Assembly Meet and Greet')
   end
 end

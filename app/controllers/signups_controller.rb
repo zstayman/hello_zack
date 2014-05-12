@@ -6,7 +6,6 @@ class SignupsController < ApplicationController
   def create
     @user = Signup.new(signup_params)
     if @user.save
-      binding.pry
       SignupMailer.confirm_email(@user).deliver
       render json: @user
     else
