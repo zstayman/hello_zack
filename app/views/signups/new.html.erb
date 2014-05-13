@@ -19,22 +19,21 @@
 
 <script>
 $("form").on("submit", function(e){
-  if($("#signup_email").val() !== ""){
   e.preventDefault();
-  $.ajax({
-    type: "POST",
-    url: "/signups",
-    data: { signup: {
-      first_name: $("#signup_first_name").val(),
-      last_name: $("#signup_last_name").val(),
-      email: $("#signup_email").val(),
-      company: $("#signup_company").val(),
-      phone_number: $("#signup_phone_number").val()
+  if($("#signup_email").val() !== ""){
+    $.ajax({
+      type: "POST",
+      url: "/signups",
+      data: { signup: {
+        first_name: $("#signup_first_name").val(),
+        last_name: $("#signup_last_name").val(),
+        email: $("#signup_email").val(),
+        company: $("#signup_company").val(),
+        phone_number: $("#signup_phone_number").val()
+      }
     }
+  }).success(function(){$("form")[0].reset()});
   }
-}).success(function(html){
-  $(".thank-you").html("Thank You " + html.first_name);
-  $("form")[0].reset();
 });
-}});
+
 </script>

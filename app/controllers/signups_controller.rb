@@ -7,7 +7,7 @@ class SignupsController < ApplicationController
     @user = Signup.new(signup_params)
     if @user.save
       SignupMailer.confirm_email(@user).deliver
-      render json: @user
+      render nothing: true
     else
       render json: @user.errors, status: :unproccessable_entity
     end
