@@ -1,0 +1,72 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+ @import url(http://fonts.googleapis.com/css?family=Cabin:400,600);
+
+ form {
+  text-align: center;
+  height: 66%;
+}
+
+.logo {
+  display: block;
+  margin: 1em auto;
+}
+
+label {
+  margin-top: 1em;
+  margin-bottom: .25em;
+  font-size: 45px;
+  font-family: Cabin;
+}
+input {
+  font-family: Cabin;
+}
+
+input[type=text], input[type=tel], input[type=email] {
+
+  border : 1px solid rgba(0,0,0, .25);
+  box-shadow: none;
+  width: 50%;
+  height: 10%;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 25px;
+}
+
+input[type=submit] {
+  margin-top: 2em;
+  background-color:#f50c0c;
+  -moz-border-radius:22px;
+  -webkit-border-radius:22px;
+  border-radius:22px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:22px;
+  padding:16px 76px;
+  text-decoration:none;
+}
+input[type=sumbit]:hover {
+  background-color:#5cbf2a;
+}
+input[type=submit]:active {
+  position:relative;
+  top:1px;
+}
+
+
