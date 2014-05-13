@@ -13,3 +13,53 @@
  *= require_tree .
  *= require_self
  */
+
+form {
+  text-align: center;
+  height: 66%;
+}
+
+.logo {
+  display: block;
+  margin: 1em auto;
+}
+
+label {
+  margin-top: 1em;
+  margin-bottom: .25em;
+  font-size: 45px;
+}
+
+input[type=text], input[type=tel] {
+  border : 1px solid rgba(0,0,0, .25);
+  box-shadow: none;
+  width: 50%;
+  height: 10%;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 25px;
+}
+
+input[type=submit] {
+  margin-top: 2em;
+  background-color:#f50c0c;
+  -moz-border-radius:22px;
+  -webkit-border-radius:22px;
+  border-radius:22px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:22px;
+  padding:16px 76px;
+  text-decoration:none;
+}
+input[type=sumbit]:hover {
+  background-color:#5cbf2a;
+}
+input[type=submit]:active {
+  position:relative;
+  top:1px;
+}
+
+
