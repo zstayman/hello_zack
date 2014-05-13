@@ -14,7 +14,9 @@
  *= require_self
  */
 
-form {
+ @import url(http://fonts.googleapis.com/css?family=Cabin:400,600);
+
+ form {
   text-align: center;
   height: 66%;
 }
@@ -28,9 +30,14 @@ label {
   margin-top: 1em;
   margin-bottom: .25em;
   font-size: 45px;
+  font-family: Cabin;
+}
+input {
+  font-family: Cabin;
 }
 
-input[type=text], input[type=tel] {
+input[type=text], input[type=tel], input[type=email] {
+
   border : 1px solid rgba(0,0,0, .25);
   box-shadow: none;
   width: 50%;
@@ -49,7 +56,6 @@ input[type=submit] {
   display:inline-block;
   cursor:pointer;
   color:#ffffff;
-  font-family:Arial;
   font-size:22px;
   padding:16px 76px;
   text-decoration:none;

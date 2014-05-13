@@ -7,7 +7,7 @@
 <%= f.text_field :last_name %><br>
 
 <%= f.label :email %> <br>
-<%= f.text_field :email %> <br>
+<%= f.email_field :email %> <br>
 <%= f.label :company %> <br>
 <%= f.text_field :company %> <br>
 <%= f.label :phone_number %> <br>
@@ -19,6 +19,7 @@
 
 <script>
 $("form").on("submit", function(e){
+  if($("#signup_email").val() !== ""){
   e.preventDefault();
   $.ajax({
     type: "POST",
@@ -35,5 +36,5 @@ $("form").on("submit", function(e){
   $(".thank-you").html("Thank You " + html.first_name);
   $("form")[0].reset();
 });
-});
+}});
 </script>
