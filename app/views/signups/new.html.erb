@@ -1,5 +1,9 @@
 <%= image_tag "GA_secondary_cog_bw.png", class: "logo" %>
 
+<div class="thank-you">
+  Thank You!
+</div>
+
 <%= form_for @signup do |f| %>
 <%= f.label :first_name %> <br>
 <%= f.text_field :first_name %><br>
@@ -13,19 +17,18 @@
 <%= f.submit "Hello" %>
 <% end %>
 
-<div class="thank-you">
-  Thank You!
-</div>
+
 
 <script>
-  function hide(){
-    $(".thank-you").fadeOut();
-  };
+function hide(){
+  $(".thank-you").fadeOut();
+  $(".thank-you").innerText = "Thank You!";
+  $("form").animate({left: "-=455px"}, 500)
+};
 
 $("form").on("submit", function(e){
   e.preventDefault();
   if($("#signup_email").val() !== ""){
-    $("form")[0].reset();
     $.ajax({
       type: "POST",
       url: "/signups",
@@ -38,10 +41,15 @@ $("form").on("submit", function(e){
       }
     }
   }).success(function(){
+    $("form")[0].reset();
     $(".thank-you").fadeIn();
+    $("form").animate({left: "+=455px"}, 500)
     window.setTimeout(hide, 2000);
+  }).error(function(){
+    $(".thank-you").innerText = "I'm sorry, your email was not recognized."
+    $(".thank-you").fadeIn();
   });
-  }
+}
 });
 
 </script>
