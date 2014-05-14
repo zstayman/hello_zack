@@ -42,3 +42,5 @@ gem 'minitest'
 # gem 'debugger', group: [:development, :test]
 
 gem 'shoulda-matchers'
+
+gem 'rails_12factor', group: :production
