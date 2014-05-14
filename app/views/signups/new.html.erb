@@ -19,6 +19,7 @@
 $("form").on("submit", function(e){
   e.preventDefault();
   if($("#signup_email").val() !== ""){
+    $("form")[0].reset();
     $.ajax({
       type: "POST",
       url: "/signups",
@@ -30,7 +31,7 @@ $("form").on("submit", function(e){
         phone_number: $("#signup_phone_number").val()
       }
     }
-  }).success(function(){$("form")[0].reset()});
+  }).success(function(){});
   }
 });
 
