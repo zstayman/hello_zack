@@ -11,7 +11,7 @@
 <%= f.label :company %> <br>
 <%= f.text_field :company %> <br>
 <%= f.label :phone_number %> <br>
-<%= f.telephone_field :phone_number %> <br>
+<%= f.text_field :phone_number, default: "no spaces please" %> <br>
 <%= f.submit "Hello" %>
 <% end %>
 
