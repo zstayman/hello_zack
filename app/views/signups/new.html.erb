@@ -13,9 +13,15 @@
 <%= f.submit "Hello" %>
 <% end %>
 
-<div class="thank-you"></div>
+<div class="thank-you">
+  Thank You!
+</div>
 
 <script>
+  function hide(){
+    $(".thank-you").fadeOut();
+  };
+
 $("form").on("submit", function(e){
   e.preventDefault();
   if($("#signup_email").val() !== ""){
@@ -31,7 +37,10 @@ $("form").on("submit", function(e){
         phone_number: $("#signup_phone_number").val()
       }
     }
-  }).success(function(){});
+  }).success(function(){
+    $(".thank-you").fadeIn();
+    window.setTimeout(hide, 2000);
+  });
   }
 });
 
