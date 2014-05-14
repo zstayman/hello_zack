@@ -68,4 +68,9 @@ input[type=submit]:active {
   top:1px;
 }
 
+.thank-you {
+  font-family: Cabin;
+  display: none;
+}
+
 
